@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <title>My site</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+
+  		function Play()
+  		{
+  			var answer = parseInt(Math.random() * 100);
+  			var plyaerNum = 1;
+  			while(true){
+  				var userAnswer = prompt('Ходит игрок ' + plyaerNum +
+          ' .Введите число от 0 до 100. Для выхода нажмите s');
+
+  				if(userAnswer == 's')
+  					break;
+
+  				if(userAnswer > answer){
+  					alert('Ваше число слишком большое');
+  				} else if(userAnswer < answer){
+  					alert('Ваше число слишком маленькое');
+  				} else if(userAnswer == answer){
+  					alert('Вы угадали, поздравляю! Победил игрок номер ' + plyaerNum);
+  					break;
+  				}
+
+  				if(plyaerNum == 1)
+  					plyaerNum = 2;
+  				else if(plyaerNum == 2)
+  					plyaerNum = 1;
+  			}
+  		}
+  	</script>
+</head>
+<body>
+<div id="header">
+  <a href="index.html">Главная</a><span>/</span>
+  <a href="puzzles.html">Загадки</a><span>/</span>
+  <a href="#">Угадайка</a><span>/</span>
+  <a href="#">Угадайка мультиплеер</a>
+</div>
+<div id="content">
+  <h1>Отгадываем загадки</h1>
+  <div id="center">
+    <div id="box">
+      <p>Играет 2 игра. У вас будет неограниченное количество попыток, чтобы угадать загадку.</p>
+      <br><br/>
+      <a href="#" onclick="Play();">Начать игру</a>
+    </div>
+  </div>
+</div>
+<div id="footer">
+  <p> Copyright &copy 2016 <a href="https://geekbrains.ru/" target="_blank">GeekBrains</a> </p>
+</div>
+
+</body>
+</html>

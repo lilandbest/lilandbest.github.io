@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <title>My site</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript">
+      function checkAnswer(){
+        var googAnswers = 0;
+        var rezult1 = document.getElementById('puzzle1').value;
+        var rezult2 = document.getElementById('puzzle2').value;
+        if (rezult1 == "капуста"){
+          googAnswers++;
+          rezult1 = "капуста";
+        } else {
+           rezult1 = " ";
+        }
+        if (rezult2 == "елка"){
+          googAnswers++;
+          rezult2 = "елка";
+        } else {
+          rezult2 = " ";
+        }
+        if (googAnswers == 0){
+          alert('Вы ничего не угадали');
+        } else {
+            alert('Колчество правельных ответов: ' + googAnswers + '. ' +
+            ' Правильные ответы это: ' + rezult1 + '  ' + rezult2);
+        }
+      }
+    </script>
+
+</head>
+<body>
+<div id="header">
+  <a href="index.html">Главная</a><span>/</span>
+  <a href="#">Загадки</a><span>/</span>
+  <a href="#">Угадайка</a><span>/</span>
+  <a href="guess-2.html">Угадайка мультиплеер</a>
+</div>
+<div id="content">
+  <h1>Отгадываем загадки</h1>
+  <div id="center">
+    <div id="box">
+      <p>Сто одежек и все без растежек</p>
+      <input type="text" id="puzzle1" />
+      <br><br>
+      <p>Зимой и летом одним цветом</p>
+      <input type="text" id="puzzle2" />
+      <br><br>
+      <a href="#" onclick="checkAnswer();"> Ответить</a>
+    </div>
+  </div>
+</div>
+<div id="footer">
+  <p> Copyright &copy 2016 <a href="https://geekbrains.ru/" target="_blank">GeekBrains</a> </p>
+</div>
+
+</body>
+</html>
